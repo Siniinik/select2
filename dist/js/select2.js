@@ -1828,10 +1828,15 @@ S2.define('select2/selection/allowClear',[
         data.length === 0) {
       return;
     }
-
+    
+    var icon_close='&times;';
+    if (this.options.get('icon_close')){
+        icon_close='<i class="'+icon_close+'"></i>';
+    }
+    
     var $remove = $(
       '<span class="select2-selection__clear">' +
-        '&times;' +
+            icon_close +
       '</span>'
     );
     $remove.data('data', data);
